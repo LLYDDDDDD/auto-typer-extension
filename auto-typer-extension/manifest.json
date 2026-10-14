@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "光标自动打字",
+  "version": "1.0.0",
+  "description": "将复制的文字逐字输入到当前网页的光标位置，支持速度、倒计时和随时停止。",
+  "permissions": ["activeTab", "scripting", "storage", "clipboardRead"],
+  "action": { "default_title": "光标自动打字", "default_popup": "popup.html" },
+  "background": { "service_worker": "background.js" },
+  "commands": {
+    "stop-typing": {
+      "suggested_key": { "default": "Alt+Shift+X" },
+      "description": "停止自动打字"
+    }
+  }
+}

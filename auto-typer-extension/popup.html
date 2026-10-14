@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>光标自动打字</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header><span class="icon">⌨</span><div><h1>光标自动打字</h1><p>把复制的文字，逐字写进网页</p></div></header>
+  <label for="text">要输入的文字 <span id="length">0 字</span></label>
+  <textarea id="text" placeholder="在这里按 Ctrl+V 粘贴文字…" spellcheck="false"></textarea>
+  <button id="clipboard" class="secondary">读取剪贴板</button>
+  <div class="settings">
+    <label for="speed">输入速度<input id="speed" type="number" min="1" max="100" value="20"><span>字 / 秒</span></label>
+    <label for="delay">准备时间<input id="delay" type="number" min="1" max="30" value="3"><span>秒</span></label>
+  </div>
+  <div id="status" role="status" aria-live="polite">先在目标网页打开本扩展。</div>
+  <progress id="progress" value="0" max="1" aria-label="输入进度"></progress>
+  <div class="actions"><button id="start" class="primary">开始输入</button><button id="stop" class="stop" disabled>停止</button></div>
+  <p class="hint">开始后弹窗自动关闭，请在倒计时内点击网页输入框。<br>按 <kbd>Esc</kbd> 或 <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> 停止。</p>
+  <p class="privacy">文字仅保存在本次浏览器会话中，不发送到服务器。</p>
+  <script src="popup.js"></script>
+</body>
+</html>
